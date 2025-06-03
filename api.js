@@ -43,8 +43,9 @@ async function getProductsData() {
             stock.id = "product-stock";
             tags.id = 'tags';
             btnCart.id = 'btn-add-cart';
-            btnCart.classList.add('btn-add-cart')
+            btnCart.classList.add('btn-add-cart');
             btnBuyNow.id = 'btn-buy-now';
+            btnBuyNow.classList.add('btn-buy-now');
             category.classList.add('category');
             category.id = 'category';
             description.id = 'description';
@@ -96,6 +97,18 @@ async function getProductsData() {
                     window.location.href = 'register.html'
                 } else {
                     console.log('erro')
+                }
+            })
+        });
+
+        const btnBuyNow = document.querySelectorAll('.btn-buy-now');
+
+        btnBuyNow.forEach(btnBuy => {
+            btnBuy.addEventListener('click', () => {
+                if (!isLogged === true) {
+                    window.location.href = 'register.html'
+                } else {
+                    console.log('logue')
                 }
             })
         })
