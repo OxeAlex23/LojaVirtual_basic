@@ -86,10 +86,9 @@ listBar.forEach(iten => {
     const divProduct = document.querySelectorAll('.product');
 
     for (let i = 0; i < divProduct.length; i++) {
+
       const product = divProduct[i];
-
       const category = product.querySelector('.category')?.textContent.toLowerCase() || '';
-
       const match = category.includes(iten.textContent.toLowerCase());
 
       product.style.display = match ? '' : 'none';
