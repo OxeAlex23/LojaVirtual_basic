@@ -40,7 +40,6 @@ form.addEventListener('submit', async (e) => {
         });
 
         const data = response.json();
-        const userId = data.userId
 
         if (response.ok) {
 

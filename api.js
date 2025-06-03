@@ -87,7 +87,7 @@ async function getProductsData() {
         });
 
         const btnAddCart = document.querySelectorAll('.btn-add-cart');
-        const isLogged = sessionStorage.getItem('logged')
+        const isLogged = sessionStorage.getItem('logged');
 
         btnAddCart.forEach(btnAdd => {
             btnAdd.addEventListener('click', () => {
@@ -96,7 +96,7 @@ async function getProductsData() {
                 if (!isLogged === true) {
                     window.location.href = 'register.html'
                 } else {
-                    console.log('erro')
+                    console.log('pode add')
                 }
             })
         });
@@ -108,7 +108,7 @@ async function getProductsData() {
                 if (!isLogged === true) {
                     window.location.href = 'register.html'
                 } else {
-                    console.log('logue')
+                    console.log('pode comprar')
                 }
             })
         })

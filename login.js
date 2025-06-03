@@ -30,12 +30,14 @@ formLogin.addEventListener('submit', async (a) => {
         const data = await response.json();
 
         if (response.ok) {
-            // const token = data.token
+            const token = data.token
+            const userId = data.userId
             console.log('logado')
 
-            localStorage.getItem('userId');
-            localStorage.getItem('token');
             sessionStorage.setItem('logged', 'true');
+            localStorage.setItem('userId', userId);
+            localStorage.setItem('token', token);
+            console.log("token: ", token, "ID: ", userId)
             window.location.href = 'home.html';
 
         } else {

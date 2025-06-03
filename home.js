@@ -102,18 +102,19 @@ async function buscarName() {
 
   try {
 
+    const idUsuario = localStorage.getItem('userId');
+    console.log(idUsuario)
+    const token = localStorage.getItem('token')
 
-    const userId = localStorage.getItem('userId')
-    const token = localStorage.getItem('token');
-
-    const response = await fetch(`http://localhost:3000/user/${userId}`, {
+    const response = await fetch(`http://localhost:3000/user/${idUsuario}`, {
+      method: 'GET',
       headers: {
-        Authorization: `Bearer ${token}`
+         'Authorization': `Bearer ${token}`
       }
     });
 
     if (!response.ok) {
-      throw new Error('erro na requisião' + response.status)
+      throw new Error('erro na requisição' + response.status)
     }
 
     const dados = await response.json();
