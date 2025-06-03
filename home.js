@@ -274,3 +274,4 @@ menuToggle.addEventListener('click', () => {
   // Alterna ícone do botão
   menuToggle.textContent = isHidden ? '☰' : '✖';
 });
+

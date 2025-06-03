@@ -29,7 +29,7 @@ async function getProductsData() {
 
 
             container.appendChild(divProduct);
-            
+
             img.src = product.img;
             spanImg.appendChild(img);
 
@@ -43,6 +43,7 @@ async function getProductsData() {
             stock.id = "product-stock";
             tags.id = 'tags';
             btnCart.id = 'btn-add-cart';
+            btnCart.classList.add('btn-add-cart')
             btnBuyNow.id = 'btn-buy-now';
             category.classList.add('category');
             category.id = 'category';
@@ -83,6 +84,21 @@ async function getProductsData() {
                 }
             });
         });
+
+        const btnAddCart = document.querySelectorAll('.btn-add-cart');
+        const isLogged = sessionStorage.getItem('logged')
+
+        btnAddCart.forEach(btnAdd => {
+            btnAdd.addEventListener('click', () => {
+                
+
+                if (!isLogged === true) {
+                    window.location.href = 'register.html'
+                } else {
+                    console.log('erro')
+                }
+            })
+        })
 
     } catch (error) {
         console.error(error);
