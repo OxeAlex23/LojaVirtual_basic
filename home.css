@@ -56,11 +56,11 @@ body {
     margin-left: 10px;
 }
 
-#list-products:hover {
+.list-products:hover {
     background-color: rgb(158, 158, 158);
 }
 
-#list-products:hover .div-all-products {
+.list-products:hover .div-all-products {
     display: flex;
 }
 
