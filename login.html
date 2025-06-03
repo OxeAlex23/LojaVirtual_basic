@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="forms.css">
+    <title>Login</title>
+</head>
+
+<body>
+<div class="field-form">
+    <div class="header">
+        <div class="nav-header">
+            <button id="btn-back"><a href="home.html" style="color: white; text-decoration: none;">Voltar</a></button>
+            <span id="redirect-register">Nao tem conta? <a href="register.html">cadastre-se!</a></span>
+        </div>
+
+        <h2>Bem-vindo de volta!</h2>
+    </div>
+        
+        <form id="loginForm">
+            <label for="email">Entre com seu Email:</label>
+            <input type="email" name="email" id="loginEmail" placeholder="Digite seu email" required>
+            <label for="password">Digite sua Senha:</label>
+            <input type="password" name="password" id="loginPassword" placeholder="********" required>
+            <img src="assets/icons8-invisível-30.png" alt="eye-visible" id="eye-visible" onclick="toggleIcon()">
+            <button id="btn-enter" type="submit">Entrar</button>
+        </form>
+        <span id="recover-password">Esqueceu Sua Senha? click <a href="#">Aqui!</a></span>
+</div>
+    
+
+<script src="login.js"></script>
+</body>
+
+</html>

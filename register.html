@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="forms.css">
+    <title>Crie Sua Conta</title>
+</head>
+
+<body>
+    <div class="field-form">
+        <div class="header">
+            <div class="nav-header">
+                <button id="btn-back"><a href="home.html"
+                        style="color: white; text-decoration: none;">Voltar</a></button>
+                <span id="redirect-register">Já tem conta? <a href="login.html">Entre!</a></span>
+            </div>
+
+            <h2>Crie sua conta!</h2>
+        </div>
+
+        <form id="form-register">
+            <label for="name">Nome completo:</label>
+            <input type="text" placeholder="Nome completo" name="name" id="name">
+            <label for="email">Digite seu Email:</label>
+            <input type="email" name="email" class="inputEmail" id="email" placeholder="Digite seu email" required>
+             <div class="load"><p id="msg">Cadastrando...</p></div>
+
+             <label for="birthdate">Data de Nascimento:</label>
+             <input type="date" name="birthdate" id="birthdate" placeholder="00/00/0000" required>
+
+             <label for="cpf">CPF:</label>
+             <input type="number" name="cpf" id="cpf" placeholder="000.000.000-00" required>
+
+            <label for="password">Crie sua Senha:</label>
+            <input type="password" name="password" class="inputPass" id="password" placeholder="********" required>
+            <img src="assets/icons8-invisível-30.png" alt="eye-visible" id="eye-visible" onclick="toggleIcon()">
+
+            <button id="btn-register" type="submit">Registrar</button>
+        </form>
+        
+    </div>
+
+   
+
+    <script src="forms.js"></script>
+</body>
+
+</html>

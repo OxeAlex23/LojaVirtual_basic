@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-color: rgb(74, 67, 75);
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.field-form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(26, 17, 49);
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 15, 221, 0.25);
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+}
+
+label {
+    font-size: 18px;
+}
+
+#email , #password, #name,
+#loginEmail, #loginPassword,
+#birthdate, #cpf {
+    width: 400px;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+#cpf::-webkit-inner-spin-button,
+#cpf::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#eye-visible {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 380px;
+    bottom: 32px;
+    cursor: pointer;
+}
+
+#eye-visible:hover {
+    opacity: 0.8;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+   
+}
+
+.nav-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#btn-enter, #btn-register {
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+}
+
+#recover-password {
+    width: 200px;
+    font-size: 13px;
+    margin: auto;
+    color: rgb(161, 160, 160);
+}
+
+#redirect-register {
+    margin-left: 200px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: gray;
+    margin-left: 5px;
+}
+
+#btn-back {
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+    background-color: brown;
+    border: none;
+    color: white;
+}
+
+#btn-back:hover {
+    opacity: 0.8;
+}
+
+.load {
+    display: none;
+    width: 200px;
+    height: 30px;
+    background-color: rgb(41, 0, 138);
+    color: rgb(255, 255, 255);
+    margin: auto;
+    position: absolute;
+    z-index: 10;
+    top: 47%;
+    right: 38%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.load p {
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 500;
+}

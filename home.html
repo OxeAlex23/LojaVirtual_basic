@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Loja Virtual</title>
+</head>
+
+<body>
+    <nav class="nav-bar">
+         <div class="menu-toggle">
+            <span id="menu">&#9776;</span>
+        </div>
+
+         <div class="menu-list">
+            <ul id="ul-list-menu">
+                <li class="list-bar-hidden">Produtos</li>
+                <li class="list-bar-hidden">Roupas</li>
+                <li class="list-bar-hidden">Esportes</li>
+                <li class="list-bar-hidden">Contatos</li>
+            </ul>
+        </div>
+
+        <h2 class="logo">Loja Virtual</h2>
+
+        <div style="display: flex; align-items: center;">
+            <ul class="itens-bar">
+                <li class="list-bar" id="list-products">
+                    Produtos
+                    <div class="div-all-products">
+                        <ul class="all-list-products">
+                            <li class="all-list">Casa</li>
+                            <li class="list-bar">Esportes</li>
+                            <li class="all-list">Bolsas</li>
+                            <li class="all-list">Roupas</li>
+                            <li class="all-list">Calçados</li>
+                        </ul>
+                    </div>
+
+                </li>
+                <li class="list-bar">Roupas</li>
+                <li class="list-bar">Esportes</li>
+                <li class="list-bar">Contatos</li>
+            </ul>
+            <button id="show-Input-Search"><img src="assets/icons8-search.png" alt="icons8-search"></button>
+        </div>
+
+        <div class="logins">
+            <button id="btn-register" class="btnsNav"><a href="register.html">Registrar-se</a></button>
+            <button id="btn-login" class="btnsNav"><a href="login.html">Entrar</a></button>
+            <button id="btn-profile" onclick="buscarName()"><img src="assets/icons8-profile.png"
+                    alt="profile.ico"></button>
+
+
+        </div>
+
+        <div class="content-profile">
+
+           
+            <div class="content-user">
+
+                <div class="user-products">
+                    <div class="back-from-profile">
+                        <span><a href="home.html">Início</a></span>
+                    </div>
+                    <div class="my-shoppings">
+                        <p id="my-pedidos">Meus pedidos</p>
+                    </div>
+                    <div class="cart">
+                        <button id="btn-cart"><img src="assets/icons8-carrinho-de-compras-50.png"
+                                alt="cart.ico"></button>
+                        <span class="span-cart">Carrinho</span>
+                    </div>
+                </div>
+                <div class="user-info">
+                    <h3>Informaçoes Pessoais:</h3>
+                    <div class="info">
+                        <span id="span-name"></span>
+                        <span id="birthdate"></span>
+                        <span id="user-cpf"></span>
+                    </div>
+
+                </div>
+                <div class="user-adress">
+
+                    <form id="form-adress">
+                        <label for="cep">Cep:</label>
+                        <input type="number" name="cep" id="cep" class="inputsAdress" placeholder="00000-000" readonly>
+                        <label for="adress">Endereço:</label>
+                        <input type="text" name="adress" id="adress" class="inputsAdress" placeholder="Rua: " readonly>
+                        <label for="num-house">Número da moradia:</label>
+                        <input type="number" name="num-house" id="numHouse" class="inputsAdress" placeholder="00"
+                            readonly>
+                        <label for="city">Cidade:</label>
+                        <input type="text" name="city" id="city" class="inputsAdress" placeholder="ex: Recife" readonly>
+                        <label for="state">Estado:</label>
+                        <input type="text" name="state" id="state" class="inputsAdress" placeholder="ex: Pernambuco"
+                            readonly>
+                        <label for="tel">Telefône:</label>
+                        <input type="tel" name="tel" id="tel" class="inputsAdress" placeholder="(00) 00000-0000"
+                            readonly>
+                        <div class="btns-config-adess">
+                            <div>
+
+                                <button id="replace-adress" onclick="activeInput()">Alterar</button>
+                                <button id="save-adress" onclick="saveInput()">Salvar</button>
+                            </div>
+                            <div id="alerta" class="mensagem" style="display: none;">
+                                <span style="margin: 5px;">Click em Alterar para cadastrar Endereço!</span>
+
+                                <div class="barra-tempo"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-user">
+                <div class="help-user">
+                    <p><a href="#">Contatos</a></p>
+                    <p onclick="showMsg()"><a href="#">Ajuda</a></p>
+                </div>
+                <div class="logout-user">
+                    <p>Sair da conta:</p>
+                    <button id="btn-logout">Sair</button>
+                </div>
+            </div>
+
+        </div>
+
+    </nav>
+    <nav class="nav-bar-down">
+        <div class="div-search">
+            <input type="search" placeholder="Procurar produto" id="input-search">
+            <img src="assets/icons8-search-black.png" alt="icons8-search" id="icon-search">
+        </div>
+    </nav>
+
+    <main class="container">
+
+    </main>
+
+    <footer>
+        <div>
+            <ul>
+                <li class="list-medias"><img src="assets/social-medias.ico/linkedin.ico" alt="linkedin.ico"><a
+                        href="www.linkedin.com/in/alex-souza-99109025b" target="_blank">LinkedIn</a></li>
+                <li class="list-medias"><img src="assets/social-medias.ico/insta.ico" alt="insta.ico"><a href="#"
+                        target="_blank">Instagram</a></li>
+                <li class="list-medias"><img src="assets/social-medias.ico/github.ico" alt="github.ico"><a
+                        href="https://github.com/OxeAlex23" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+
+        <div class="copyrights">
+            <p>Alguns Ícones foram tirados em <a href="https://icons8.com.br/icons"
+                    target="_blank">https://icons8.com.br/icons</a>. Acesse ao site para baixar icones gratuitos!</p>
+        </div>
+    </footer>
+    <script src="home.js"></script>
+    <script src="api.js"></script>
+</body>
+
+</html>
