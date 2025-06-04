@@ -6,12 +6,17 @@ async function getProductsData() {
     }
 
     return response.json();
-}
+};
 
 (async () => {
     try {
         const products = await getProductsData();
         const container = document.querySelector('.container');
+        const adsDefault = document.querySelector('.ads-default');
+        const adsDefault2 = document.querySelector('.ads-default-2');
+        container.style.display = 'grid';
+        adsDefault.style.display = 'none';
+        adsDefault2.style.display = 'none';
 
         products.forEach(product => {
             const divProduct = document.createElement('div');
