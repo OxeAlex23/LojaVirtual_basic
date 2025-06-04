@@ -8,7 +8,7 @@ async function getProductsData() {
     return response.json();
 };
 
-(async () => {
+async function showPro() {
     try {
         const products = await getProductsData();
         const container = document.querySelector('.container');
@@ -96,7 +96,7 @@ async function getProductsData() {
 
         btnAddCart.forEach(btnAdd => {
             btnAdd.addEventListener('click', () => {
-                
+
 
                 if (!isLogged === true) {
                     window.location.href = 'register.html'
@@ -121,4 +121,8 @@ async function getProductsData() {
     } catch (error) {
         console.error(error);
     }
-})();
+};
+
+showPro()
+
+
