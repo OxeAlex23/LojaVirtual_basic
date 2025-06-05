@@ -32,31 +32,39 @@ form.addEventListener('submit', async (e) => {
         const response = await fetch('http://localhost:3000/auth/register', {
             method: 'POST',
             headers: {
-                'Content-Type':'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name, email, birthdate, cpf,  password
+                name, email, birthdate, cpf, password
             })
         });
 
-        const data = response.json();
+        const data = await response.json();
 
         if (response.ok) {
 
+            const {token, userId} = data
+            console.log('logado')
+
             sessionStorage.setItem('registered', 'true');
+
+            localStorage.setItem('userId', userId);
+            localStorage.setItem('token', token);
+
             window.location.href = 'home.html';
-            
-        } 
+
+        }
         else {
             console.log('erro ao criar', data);
             load.style.backgroundColor = 'red';
             msg.textContent = 'Email já cadastrado';
+            load.style.display = 'none';
         }
 
 
     } catch (err) {
         console.error(err);
-        load.display.style = 'none';
+        load.style.display = 'none';
     }
 })
 

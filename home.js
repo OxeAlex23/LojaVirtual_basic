@@ -98,17 +98,19 @@ listBar.forEach(iten => {
 })
 
 async function buscarName() {
+  window.onload = () => {
+    buscarName();
+  }
 
   try {
 
     const idUsuario = localStorage.getItem('userId');
-    console.log(idUsuario)
     const token = localStorage.getItem('token')
 
     const response = await fetch(`http://localhost:3000/user/${idUsuario}`, {
       method: 'GET',
       headers: {
-         'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`
       }
     });
 
@@ -118,14 +120,13 @@ async function buscarName() {
 
     const dados = await response.json();
 
-
     const userName = document.getElementById('span-name');
     const userBirthdate = document.getElementById('birthdate')
     const userCpf = document.getElementById('user-cpf');
 
     const dateOriginal = dados.birthdate;
-    const [year, mouth, day] = dateOriginal.split('-');
-    const dateFormated = `${day}/${mouth}/${year}`;
+    const [year, month, day] = dateOriginal.split('-');
+    const dateFormated = `${day}/${month}/${year}`;
 
     const cpf = dados.cpf;
     const cpfFormated = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
