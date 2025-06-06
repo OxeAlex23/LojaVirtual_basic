@@ -26,9 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 })
 
-// 2 criar mais produtos no banco
-// 3 add um spin no loading
-
 const profileBtn = document.getElementById('btn-profile');
 const contentProfile = document.querySelector('.content-profile');
 
@@ -53,7 +50,6 @@ profileBtn.addEventListener('click', function () {
   }, 0);
 
 });
-
 
 const btnSearch = document.getElementById('icon-search');
 const inputSearch = document.getElementById('input-search');

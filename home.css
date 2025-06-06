@@ -329,6 +329,7 @@ a {
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     pointer-events: none;
     color: rgb(255, 255, 255);
+    z-index: 1000;
 }
 
 .content-profile.visible {
@@ -348,12 +349,11 @@ a {
 }
 
 .content-user {
-    display: none;
+    display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
     align-items: center;
-
 }
 
 .user-products {
@@ -394,12 +394,19 @@ a {
     position: fixed;
 }
 
+.cart-product {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
 .cart {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    padding: 10px;
 }
 
 .all-products-cart {
