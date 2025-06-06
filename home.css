@@ -215,6 +215,33 @@ body {
     color: white;
 }
 
+
+#btn-buy-now-cart {
+    width: 60%;
+    height: 25px;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: rgb(196, 0, 91);
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 10px;
+}
+
+#btn-delete-iten {
+     width: 60%;
+    height: 25px;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: red;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 10px;
+}
+
 #btn-add-cart:hover,
 #btn-buy-now:hover {
     opacity: 0.8;
@@ -222,6 +249,26 @@ body {
 
 #product-price {
     font-size: 24px;
+}
+
+.product-cart {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid rgb(209, 165, 124);
+}
+
+.product-cart span {
+    font-size: 10px;
+    margin: 3px;
+}
+
+.product-cart h3 {
+    font-size: 13px;
 }
 
 footer {
@@ -301,7 +348,7 @@ a {
 }
 
 .content-user {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100%;
     height: 100%;
@@ -346,6 +393,23 @@ a {
     font-size: 10px;
     position: fixed;
 }
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.all-products-cart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    overflow-y: auto;
+}
+
 
 .user-info {
     display: flex;

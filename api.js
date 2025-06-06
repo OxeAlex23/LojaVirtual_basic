@@ -94,17 +94,75 @@ async function showPro() {
         const btnAddCart = document.querySelectorAll('.btn-add-cart');
         const isLogged = sessionStorage.getItem('logged');
 
+        const productCart = document.querySelector('.product-cart');
+        const titleCart = document.createElement('h1');
+        const spanImg = document.createElement('span');
+        const spanPrice = document.createElement('span');
+        const spanStock = document.createElement('span');
+        const spanCategory = document.createElement('span');
+        const spanDescription = document.createElement('span');
+
+
         btnAddCart.forEach(btnAdd => {
             btnAdd.addEventListener('click', () => {
+                const pai = btnAdd.parentElement;
+                const childrens = pai.children;
+                const childrenArray = Array.from(childrens);
 
-
-                if (!isLogged === true) {
-                    window.location.href = 'register.html'
-                } else {
-                    console.log('pode add')
+                // Corrigir verificação de login
+                if (!isLogged) {
+                    window.location.href = 'register.html';
+                    return; // interrompe execução se não estiver logado
                 }
-            })
+
+                // Criar novo elemento para o produto do carrinho
+                const productCart = document.createElement('div');
+                productCart.classList.add('product-cart');
+
+                const titleCart = document.createElement('h3');
+                const spanImg = document.createElement('span'); // Pode usar <img> se quiser imagem
+                const spanPrice = document.createElement('span');
+                const spanStock = document.createElement('span');
+                const spanCategory = document.createElement('span');
+                const spanDescription = document.createElement('span');
+                const btnBuyNow = document.createElement('button');
+                const btnDeleteIten = document.createElement('button');
+
+                // Preencher com os dados
+                titleCart.textContent = childrenArray[0].textContent;
+                //  spanImg.textContent = 'Imagem'; // Ajuste aqui se tiver imagem
+                spanPrice.textContent = childrenArray[2].textContent;
+                spanStock.textContent = childrenArray[3].textContent;
+                spanCategory.textContent = childrenArray[7].textContent;
+                spanDescription.textContent = childrenArray[8].textContent;
+                btnBuyNow.textContent = 'Comprar Agora';
+                btnDeleteIten.textContent = 'Excluir';
+                btnDeleteIten.id = 'btn-delete-iten';
+                btnBuyNow.id = 'btn-buy-now-cart';
+
+                // Montar produto
+                productCart.append(titleCart, spanImg, spanPrice, spanStock, spanCategory, spanDescription, btnBuyNow, btnDeleteIten);
+
+                // Adicionar ao carrinho
+                const allProductsCart = document.querySelector('.all-products-cart');
+                allProductsCart.appendChild(productCart);
+
+                function enableRemoveFromCart(btnDeleteIten) {
+                    btnDeleteIten.addEventListener('click', () => {
+                        const productElement = btnDeleteIten.parentElement;
+                        productElement.remove();
+                    });
+                }
+
+                enableRemoveFromCart(btnDeleteIten);
+            });
         });
+
+
+
+
+
+
 
         const btnBuyNow = document.querySelectorAll('.btn-buy-now');
 

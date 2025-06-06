@@ -37,7 +37,6 @@ formLogin.addEventListener('submit', async (a) => {
             sessionStorage.setItem('logged', 'true');
             localStorage.setItem('userId', userId);
             localStorage.setItem('token', token);
-            console.log("token: ", token, "ID: ", userId)
             window.location.href = 'home.html';
 
         } else {
