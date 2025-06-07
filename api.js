@@ -94,14 +94,6 @@ async function showPro() {
         const btnAddCart = document.querySelectorAll('.btn-add-cart');
         const isLogged = sessionStorage.getItem('logged');
 
-        const productCart = document.querySelector('.product-cart');
-        const titleCart = document.createElement('h1');
-        const spanImg = document.createElement('span');
-        const spanPrice = document.createElement('span');
-        const spanStock = document.createElement('span');
-        const spanCategory = document.createElement('span');
-        const spanDescription = document.createElement('span');
-
 
         btnAddCart.forEach(btnAdd => {
             btnAdd.addEventListener('click', () => {
