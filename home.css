@@ -327,7 +327,6 @@ a {
     opacity: 0;
     transform: translateX(100%);
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-    pointer-events: none;
     color: rgb(255, 255, 255);
     z-index: 1000;
 }
@@ -335,8 +334,52 @@ a {
 .content-profile.visible {
     opacity: 1;
     transform: translateX(0);
-    pointer-events: auto;
     /* habilita clique quando visível */
+}
+
+#add-with-sucess {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    width: 250px;
+    height: 30px;
+    position: absolute;
+    right: 100px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+#removed-with-sucesso {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: red;
+}
+
+.div-total {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+#btn-finaly {
+    width: 30%;
+    height: 30px;
+    background-color: rgb(255, 94, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+#btn-finaly:hover {
+    opacity: 0.8;
 }
 
 .title-user-name {
@@ -407,6 +450,11 @@ a {
     flex-direction: column;
     width: 100%;
     height: 100%;
+    margin-left: 100px;
+}
+
+.cart:hover {
+    opacity: 0.8;
 }
 
 .all-products-cart {
@@ -443,6 +491,12 @@ a {
 
 .back-from-profile span:hover {
     opacity: 0.8;
+}
+
+.my-shoppings {
+    display: flex;
+    width: 100px;
+    margin-left: 100px;
 }
 
 #my-pedidos {

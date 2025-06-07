@@ -33,7 +33,7 @@ const contentProfile = document.querySelector('.content-profile');
 function hideAway(event) {
 
 
-  if (!contentProfile.contains(event.target) && event.target !== profileBtn) {
+  if (!contentProfile.contains(event.target) && event.target !== profileBtn && !event.target.classList.contains("btn-delete-iten")) {
     contentProfile.classList.remove('visible');
     document.removeEventListener('click', hideAway);
   }
@@ -271,4 +271,15 @@ menuToggle.addEventListener('click', () => {
   // Alterna ícone do botão
   menuToggle.textContent = isHidden ? '☰' : '✖';
 });
+
+
+const btnCart = document.getElementById('btn-cart');
+const cartProduct = document.querySelector('.cart-product');
+const contentUser = document.querySelector('.content-user')
+
+btnCart.addEventListener('click', () => {
+  btnCart.style.display = 'none';
+  cartProduct.style.display = 'flex';
+  contentUser.style.display = 'none';
+})
 

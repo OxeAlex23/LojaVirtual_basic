@@ -137,7 +137,7 @@ async function showPro() {
                 spanDescription.textContent = childrenArray[8].textContent;
                 btnBuyNow.textContent = 'Comprar Agora';
                 btnDeleteIten.textContent = 'Excluir';
-                btnDeleteIten.id = 'btn-delete-iten';
+                btnDeleteIten.id = 'btn-delete-iten'; btnDeleteIten.classList.add('btn-delete-iten')
                 btnBuyNow.id = 'btn-buy-now-cart';
 
                 // Montar produto
@@ -147,10 +147,27 @@ async function showPro() {
                 const allProductsCart = document.querySelector('.all-products-cart');
                 allProductsCart.appendChild(productCart);
 
+                // alerta apos add
+                const spanAddAlert = document.getElementById('add-with-sucess');
+                spanAddAlert.style.display = 'flex';
+
+                setTimeout(() => {
+                    spanAddAlert.style.display = 'none';
+                }, 1500)
+
+
                 function enableRemoveFromCart(btnDeleteIten) {
                     btnDeleteIten.addEventListener('click', () => {
                         const productElement = btnDeleteIten.parentElement;
                         productElement.remove();
+
+                        const spanRemovedAlert = document.getElementById('removed-with-sucesso');
+
+                        spanRemovedAlert.style.display = 'flex';
+
+                        setTimeout(() => {
+                            spanRemovedAlert.style.display = 'none';
+                        }, 1500)
                     });
                 }
 
