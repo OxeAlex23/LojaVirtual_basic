@@ -131,6 +131,7 @@ async function showPro() {
                 btnDeleteIten.textContent = 'Excluir';
                 btnDeleteIten.id = 'btn-delete-iten'; btnDeleteIten.classList.add('btn-delete-iten')
                 btnBuyNow.id = 'btn-buy-now-cart';
+                spanPrice.classList.add('span-price-cart')
 
                 // Montar produto
                 productCart.append(titleCart, spanImg, spanPrice, spanStock, spanCategory, spanDescription, btnBuyNow, btnDeleteIten);
@@ -145,13 +146,37 @@ async function showPro() {
 
                 setTimeout(() => {
                     spanAddAlert.style.display = 'none';
-                }, 1500)
+                }, 1500);
+
+                const spansPrices = document.querySelectorAll('.span-price-cart');
+                let total = 0;
+                
+                spansPrices.forEach(iten => {
+                    const spanTotalCart = document.getElementById('total-cart');
+                    const textPrice = iten.textContent.replace("R$", '').trim().replace(",", '.');
+                    const priceFormated = parseFloat(textPrice);
+
+                    if (!isNaN(priceFormated)) {
+                        total += priceFormated;
+                        spanTotalCart.textContent = `Total: R$ ${total}`;
+                        return total
+                    }
+
+                    return total
+                })
 
 
                 function enableRemoveFromCart(btnDeleteIten) {
                     btnDeleteIten.addEventListener('click', () => {
                         const productElement = btnDeleteIten.parentElement;
                         productElement.remove();
+                        const spanPriceCartRemoved = productElement.querySelector('.span-price-cart');
+                        const spanPriceCartRemovedFormated = spanPriceCartRemoved.textContent.replace("R$", "").trim().replace("," , ".");
+                        total -= spanPriceCartRemovedFormated
+
+                          const spanTotalCart = document.getElementById('total-cart');
+                            spanTotalCart.textContent = `Total: R$ ${total}`;
+                        // alguns erros quando remove iten no total
 
                         const spanRemovedAlert = document.getElementById('removed-with-sucesso');
 
