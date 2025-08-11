@@ -131,6 +131,21 @@ async function buscarName() {
     userBirthdate.textContent = `Data de Nascimento: ${dateFormated}`;
     userCpf.textContent = `CPF: ${cpfFormated}`;
 
+    const cep = document.getElementById('cep');
+    const address = document.getElementById('adress');
+    const numHouse = document.getElementById('numHouse');
+    const city = document.getElementById('city');
+    const state = document.getElementById('state');
+    const tel = document.getElementById('tel');
+
+    cep.value = dados.cep;
+      console.log('dados',dados,'cep: ', cep)
+    address.value = dados.address;
+    numHouse.value = dados.numHouse;
+    city.value = dados.city;
+    state.value = dados.state;
+    tel.value = dados.tel;
+
   } catch (err) {
     console.error('erro ao buscar dados' + err)
   }
@@ -169,9 +184,11 @@ document.addEventListener('click', function (event) {
 
 function activeInput() {
   const inputsAdress = document.querySelectorAll('.inputsAdress');
+  console.log('clickou')
 
   inputsAdress.forEach(input => {
     input.removeAttribute('readonly');
+    console.log(input)
   })
 
 };
@@ -215,48 +232,50 @@ function showMsg() {
 
 //add adress
 
-//     const formAdress = document.getElementById('form-adress');
+const formAdress = document.getElementById('form-adress');
 
-//     formAdress.addEventListener('submit', async (b) => {
-//       b.preventDefault();
+formAdress.addEventListener('submit', async (b) => {
+  b.preventDefault();
 
-//       const cep = formAdress.cep.value;
-//       const adress = formAdress.adress.value;
-//       const numHouse = formAdress.numHouse.value;
-//       const city = formAdress.city.value;
-//       const state = formAdress.state.value;
-//       const tel = formAdress.tel.value;
+  const cep = formAdress.cep.value;
+  const address = formAdress.adress.value;
+  const numHouse = formAdress.numHouse.value;
+  const city = formAdress.city.value;
+  const state = formAdress.state.value;
+  const tel = formAdress.tel.value;
 
-//      try {
-//     const response = await fetch(`http://localhost:3000/user/${localStorage.setItem('userId')}`, {
-//         method: 'PATCH',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             cep,
-//             adress,
-//             numHouse,
-//             city,
-//             state,
-//             tel
-//         })
-//     });
+  console.log(localStorage.getItem('userId'));
 
-//     const data = await response.json();
+  try {
+    const response = await fetch(`http://localhost:3000/users/${localStorage.getItem('userId')}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        cep,
+        address,
+        numHouse,
+        city,
+        state,
+        tel
+      })
+    });
 
-//     if (response.ok) {
-//         console.log("Endereço atualizado", data);
-//     } else {
-//         console.error("Erro ao atualizar:", data.msg || data);
-//     }
+    const data = await response.json();
 
-// } catch (err) {
-//     console.error('Erro ao endereçar:', err);
-// }
+    if (response.ok) {
+      console.log("Endereço atualizado", data);
+    } else {
+      console.error("Erro ao atualizar:", data.msg || data);
+    }
+
+  } catch (err) {
+    console.error('Erro ao endereçar:', err);
+  }
 
 
-//     })
+})
 
 
 const menuToggle = document.querySelector('.menu-toggle');
