@@ -12,11 +12,10 @@ async function showPro() {
     try {
         const products = await getProductsData();
         const container = document.querySelector('.container');
-        const adsDefault = document.querySelector('.ads-default');
-        const adsDefault2 = document.querySelector('.ads-default-2');
-        container.style.display = 'grid';
-        adsDefault.style.display = 'none';
-        adsDefault2.style.display = 'none';
+        container.style.display = 'flex';
+        const divProducts = document.querySelector('.products');
+
+
 
         products.forEach(product => {
             const divProduct = document.createElement('div');
@@ -33,7 +32,7 @@ async function showPro() {
             const category = document.createElement('span');
 
 
-            container.appendChild(divProduct);
+            divProducts.appendChild(divProduct);
 
             img.src = product.img;
             spanImg.appendChild(img);
@@ -65,7 +64,7 @@ async function showPro() {
             btnBuyNow.textContent = 'Comprar Agora';
 
             divProduct.appendChild(divProductIten)
-            divProductIten.append(title, spanImg, price, stock, tags, btnCart, btnBuyNow, category, description);
+            divProductIten.append(title, spanImg, price, stock, tags, btnBuyNow, btnCart, category, description);
         });
 
         console.log('Dados carregados com sucesso');

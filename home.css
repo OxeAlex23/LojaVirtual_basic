@@ -8,7 +8,7 @@
 
 body {
     display: flex;
-    background-color: rgb(14, 0, 17);
+    background-color: white;
     width: 100%;
     height: 100%;
     flex-direction: column;
@@ -151,13 +151,21 @@ body {
     cursor: pointer;
 }
 
-.container {
+.container {   
     display: flex;
-    flex-direction: column;
     width: 100%;
     height: 100%;
-    max-width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 60%;
+    gap: 7px;
+    padding: 20px;
+    background-color: white;
+}
+
+.products {
+    display: grid;
+     width: 60%;
+    height: 100%;
+    max-width: 60%;
     gap: 7px;
     padding: 20px;
 }
@@ -173,20 +181,22 @@ body {
 .product-item {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
     height: 350px;
-    color: rgb(255, 255, 255);
+    color: black;
     align-items: center;
     gap: 5px;
     font-family: 'Poppins', sans-serif;
-    border: 1px solid rgb(209, 165, 124);
+    border-radius: 15px;
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
-    background-color: #333;
+    background-color: white;
     cursor: pointer;
 }
 
 .product-item:hover {
     opacity: 0.9;
+    border: 1px solid rgba(0, 0, 0, 0.226);
 }
 #product-title {
     font-size: 15px;
@@ -208,7 +218,7 @@ body {
 #btn-buy-now {
     width: 80%;
     height: 35px;
-    background-color: rgb(196, 0, 91);
+    background-color: rgb(0, 118, 196);
     cursor: pointer;
     border: none;
     border-radius: 5px;
@@ -657,6 +667,12 @@ a {
 
 .menu-list {
     display: none;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
 }
 
 @keyframes diminuir {
